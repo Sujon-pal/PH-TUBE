@@ -6,6 +6,7 @@ function loadVideo() {
 
 const displayVideo = (videos) => {
   const videoContainer = document.getElementById("video-container");
+  videoContainer.innerHTML = "";
   videos.forEach((video) => {
     const videocard = document.createElement("div");
     videocard.innerHTML = `
@@ -41,7 +42,7 @@ const displayVideo = (videos) => {
     videoContainer.append(videocard);
   });
 };
-loadVideo();
+// loadVideo();
 
 // {
 //     "category_id": "1001",
