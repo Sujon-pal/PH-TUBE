@@ -16,7 +16,7 @@ function displayCategories(categorie) {
     // create Element
     const div = document.createElement("div");
     div.innerHTML = `
-    <button onclick="loadCategoriesVideo(${cat.category_id})" class="btn btn-sm">${cat.category}</button>
+    <button id="btn-${cat.category_id}" onclick="loadCategoriesVideo(${cat.category_id})" class="btn btn-sm">${cat.category}</button>
     `;
     // Append element
     categoriesContiner.append(div)

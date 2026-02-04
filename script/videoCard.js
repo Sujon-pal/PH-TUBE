@@ -1,12 +1,27 @@
 function loadVideo() {
   fetch("https://openapi.programming-hero.com/api/phero-tube/videos")
     .then((response) => response.json())
-    .then((data) => displayVideo(data.videos));
+    .then((data) => {
+      removeActiveClass();
+      const remoce = document.getElementById('btn-all').classList.add('active');
+      console.log(remoce)
+      displayVideo(data.videos);
+    });
 }
 
 const displayVideo = (videos) => {
   const videoContainer = document.getElementById("video-container");
   videoContainer.innerHTML = "";
+  if (videos.length == 0) {
+    videoContainer.innerHTML = `
+    <div class=" col-span-full flex flex-col items-center justify-center py-18 text-center">
+      <img src="Icon.png" alt="">
+      <h1 class="text-xl font-bold mt-5">Oops!! Sorry, There is no <br> content here</h1>
+    </div>
+    `;
+
+    return;
+  }
   videos.forEach((video) => {
     const videocard = document.createElement("div");
     videocard.innerHTML = `
@@ -42,7 +57,7 @@ const displayVideo = (videos) => {
     videoContainer.append(videocard);
   });
 };
-// loadVideo();
+loadVideo();
 
 // {
 //     "category_id": "1001",
