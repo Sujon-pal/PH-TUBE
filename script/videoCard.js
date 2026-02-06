@@ -48,7 +48,12 @@ const displayVideo = (videos) => {
           </div>
           <div class="info mb-2">
             <h1 class="font-semibold text-xl mb-3">${video.title}</h1>
-            <p class="text-gray-600 text-sm flex gap-1 mb-2">${video.authors[0].profile_name} <img class="w-5 h-5" src="verifid.png" alt=""></p>
+            <p class="text-gray-600 text-sm flex gap-1 mb-2">
+            ${video.authors[0].profile_name} 
+            ${video.authors[0].verified == true ? ` <img class="w-5 h-5" src="verifid.png" alt="">` : ``} 
+            
+           
+            </p>
             <p class="text-gray-600 text-sm">${video.others.views} views</p>
           </div>
         </div>
