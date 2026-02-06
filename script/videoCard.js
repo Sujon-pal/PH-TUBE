@@ -1,5 +1,7 @@
-function loadVideo() {
-  fetch("https://openapi.programming-hero.com/api/phero-tube/videos")
+function loadVideo(searchBtn = "") {
+  fetch(
+    `https://openapi.programming-hero.com/api/phero-tube/videos?title=${searchBtn}`,
+  )
     .then((response) => response.json())
     .then((data) => {
       removeActiveClass();
