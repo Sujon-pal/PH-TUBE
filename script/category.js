@@ -5,8 +5,6 @@ function loadCategories() {
     .then((data) => displayCategories(data.categories));
 }
 
-
-
 function displayCategories(categorie) {
   // get container
   const categoriesContiner = document.getElementById("categories-continer");
@@ -19,7 +17,7 @@ function displayCategories(categorie) {
     <button id="btn-${cat.category_id}" onclick="loadCategoriesVideo(${cat.category_id})" class="btn btn-sm">${cat.category}</button>
     `;
     // Append element
-    categoriesContiner.append(div)
+    categoriesContiner.append(div);
   }
 }
 

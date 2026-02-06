@@ -3,8 +3,8 @@ function loadVideo() {
     .then((response) => response.json())
     .then((data) => {
       removeActiveClass();
-      const remoce = document.getElementById('btn-all').classList.add('active');
-      console.log(remoce)
+      const remoce = document.getElementById("btn-all").classList.add("active");
+
       displayVideo(data.videos);
     });
 }
@@ -52,6 +52,7 @@ const displayVideo = (videos) => {
             <p class="text-gray-600 text-sm">${video.others.views} views</p>
           </div>
         </div>
+        <button onclick ="loadVideoDetails('${video.video_id}')" class="btn btn-outline btn-info ">Info</button>
       </div>
         `;
     videoContainer.append(videocard);

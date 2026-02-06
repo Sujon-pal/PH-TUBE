@@ -33,7 +33,7 @@
     <nav id="categories-continer" class="flex justify-center mt-7 gap-4">
       <button
         id="btn-all"
-         onclick="loadVideo()"
+        onclick="loadVideo()"
         class="btn btn-sm font-semibold"
       >
         All
@@ -54,6 +54,22 @@
       </div>
     </section>
 
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+    <dialog id="video_details" class="modal">
+      <div class="modal-box">
+        <div id="videoDetails-Container"></div>
+
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="script/loadVideoDetails.js"></script>
     <script src="script/filter.js"></script>
     <script src="script/category.js"></script>
     <script src="script/videoCard.js"></script>
